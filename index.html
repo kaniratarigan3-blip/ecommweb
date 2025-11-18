@@ -60,39 +60,144 @@
     }
 
     /* Stamp / perforated card */
-    .stamp {
-      position: relative;
-      background: var(--cream);
-      border: 6px solid rgba(59,80,122,0.06);
-      padding: 1rem;
-      border-radius: 10px;
-      overflow: visible;
-    }
-    .stamp::before,
-    .stamp::after{
-      content: "";
-      position: absolute;
-      left: -10px; right: -10px;
-      height: 16px; top: -22px;
-      background: repeating-linear-gradient(90deg, transparent 0 12px, rgba(255,255,255,0.6) 12px 16px);
-      transform: translateY(0);
-    }
-    .stamp::after{
-      top: auto; bottom: -22px;
-      transform: rotate(180deg);
-    }
+/* =========================
+   CARD 1 — DUSTY BLUE RETRO
+   ========================= */
+.card-blue {
+  background: #dce7f4; /* dusty pastel blue */
+  border: 6px solid rgba(40,60,100,0.25);
+  box-shadow: 8px 8px 0 rgba(30,45,80,0.15);
+}
 
-    /* Perforation effect at card edges (left/right) */
-    .stamp .perforation {
-      position:absolute;
-      top: -8px; bottom: -8px;
-      width: 12px;
-      background: repeating-linear-gradient(180deg, transparent 0 12px, rgba(59,80,122,0.03) 12px 16px);
-      left: -20px;
-      border-radius: 50%;
-    }
-    .stamp .perforation.right { left: auto; right: -20px; transform: scaleX(-1); }
+/* top & bottom perforated lace */
+.card-blue::before,
+.card-blue::after {
+  content: "";
+  position: absolute;
+  left: -10px; right: -10px;
+  height: 16px; top: -22px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 12px,
+    rgba(255,255,255,0.7) 12px 16px
+  );
+}
+.card-blue::after {
+  top: auto;
+  bottom: -22px;
+  transform: rotate(180deg);
+}
 
+/* side perforation */
+.card-blue .perforation {
+  position:absolute;
+  top: -8px; bottom: -8px;
+  width: 12px;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0 12px,
+    rgba(40,60,100,0.1) 12px 16px
+  );
+  border-radius: 50%;
+  left: -20px;
+}
+.card-blue .perforation.right {
+  left: auto; right: -20px; transform: scaleX(-1);
+}
+
+
+/* ==============================
+   CARD 2 — REDDISH ORANGE RETRO
+   ============================== */
+.card-orange {
+  background: #ffe1cc; /* peachy retro */
+  border: 6px solid rgba(180,70,30,0.25);
+  box-shadow: 8px 8px 0 rgba(120,50,20,0.18);
+}
+
+/* top & bottom lace */
+.card-orange::before,
+.card-orange::after {
+  content:"";
+  position:absolute;
+  left:-10px; right:-10px;
+  height:16px; top:-22px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 12px,
+    rgba(255,230,220,0.7) 12px 16px
+  );
+}
+.card-orange::after {
+  top:auto;
+  bottom:-22px;
+  transform:rotate(180deg);
+}
+
+/* side perforation */
+.card-orange .perforation {
+  position:absolute;
+  top:-8px; bottom:-8px;
+  width:12px;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0 12px,
+    rgba(180,70,30,0.1) 12px 16px
+  );
+  border-radius:50%;
+  left:-20px;
+}
+.card-orange .perforation.right {
+  left:auto; right:-20px; transform:scaleX(-1);
+}
+
+
+
+/* =======================================
+   CARD 3 — DARK PURPLE + BLACK VINTAGE
+   ======================================= */
+.card-purple {
+  background: linear-gradient(180deg, #2e1840, #140b1f);
+  border: 6px solid rgba(255,255,255,0.06);
+  box-shadow: 10px 10px 0 rgba(0,0,0,0.4);
+  color: #f3eaff; /* text tetap terbaca */
+}
+
+/* top & bottom lace */
+.card-purple::before,
+.card-purple::after {
+  content: "";
+  position: absolute;
+  left: -10px; right: -10px;
+  height: 16px; top: -22px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent 0 12px,
+    rgba(255,255,255,0.15) 12px 16px
+  );
+}
+.card-purple::after {
+  top:auto;
+  bottom:-22px;
+  transform:rotate(180deg);
+}
+
+/* side perforation */
+.card-purple .perforation {
+  position:absolute;
+  top:-8px; bottom:-8px;
+  width:12px;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0 12px,
+    rgba(255,255,255,0.09) 12px 16px
+  );
+  border-radius:50%;
+  left:-20px;
+}
+.card-purple .perforation.right {
+  left:auto; right:-20px; transform:scaleX(-1);
+}
     /* small ribbon label */
     .label-ribbon {
       display:inline-block;
@@ -310,7 +415,7 @@
             <img src="https://github.com/kaniratarigan3-blip/ecomm/blob/main/tema.jpg?raw=true" alt="hero" class="max-w-full h-auto rounded-lg">
           </div>
 
-          <p class="mt-4 text-sm md:text-base text-muted max-w-2xl mx-auto">We bring charming illustrated collections to brighten your daily life — Custom and grab yours now, lovingly crafted keychains.</p>
+          <p class="mt-4 text-sm md:text-base text-muted max-w-2xl mx-auto">We bring charming illustrated collections to brighten your daily life — Custom and catch yours now, lovingly crafted keychains.</p>
 
         </div>
 
@@ -369,65 +474,53 @@
       <div class="mt-6 scallop"></div>
     </section>
 
-<!-- PROMO CARDS (Stamp Collection style) -->
+    <!-- PROMO CARDS (Stamp Collection style) -->
 <section id="collections" class="mt-10">
   <h2 class="text-xl md:text-2xl font-semibold mb-4">Collections — Choose Theme</h2>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-    <!-- CARD TEMPLATE -->
-    <div class="stamp p-4" id="card-sea">
+    <!-- CARD 1 -->
+    <div class="stamp p-4 rounded-xl border border-[#9CB7D3]/60 shadow-lg shadow-[#9CB7D3]/40 bg-gradient-to-br from-[#EAF2FF] to-[#C8D9F0]" id="card-sea">
       <div class="perforation"></div>
       <div class="perforation right"></div>
 
-      <!-- MOBILE FIRST -->
       <div class="flex flex-col sm:flex-row items-start gap-4">
-
-        <!-- IMAGE -->
         <div class="w-full sm:w-28">
           <div class="w-full h-40 sm:h-28 rounded-md bg-gradient-to-br from-blue-50 to-[#D6E8FF] flex items-center justify-center overflow-hidden">
-            <img src="https://github.com/kaniratarigan3-blip/ecomm/blob/main/download20251102072934.png?raw=true" 
-                 alt="sea" class="w-full h-full object-cover">
+            <img src="https://github.com/kaniratarigan3-blip/ecomm/blob/main/download20251102072934.png?raw=true"
+            class="w-full h-full object-cover">
           </div>
         </div>
 
-        <!-- CONTENT -->
         <div class="flex-1 w-full">
-
-          <!-- LABEL + TITLE + BADGE -->
           <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
             <div>
               <div class="label-ribbon">Theme</div>
               <h3 class="text-lg font-bold mt-2">Jellyfish Lagoon</h3>
             </div>
-
-            <div class="text-sm text-muted sm:ml-2">New</div>
+            <div class="text-sm text-muted">New</div>
           </div>
 
-          <p class="mt-2 text-sm text-muted">
-            Soft Artstyle — sea theme beads & soft coloring palette.
-          </p>
+          <p class="mt-2 text-sm text-muted">Soft Artstyle — sea theme beads & soft coloring palette.</p>
 
-          <!-- BUTTONS -->
           <div class="mt-4 flex flex-col sm:flex-row gap-2">
-            <button class="btn-vintage look-btn" 
+            <button class="btn-vintage look-btn"
               data-theme="Jellyfish Lagoon"
               data-images="https://github.com/kaniratarigan3-blip/ecomm/blob/main/j1.jpg?raw=true,https://github.com/kaniratarigan3-blip/ecomm/blob/main/j2.jpg?raw=true,https://github.com/kaniratarigan3-blip/ecomm/blob/main/j3.jpg?raw=true">
               Look Collection
             </button>
-
             <button class="btn-vintage bg-white/90 border price-btn"
-              data-price="Rp. 15.000. - Rp. 25.000">
+              data-price="Rp. 15.000 - Rp. 25.000">
               Price
             </button>
           </div>
-
         </div>
       </div>
     </div>
 
-    <!-- CARD 2: Sweet Fruits -->
-    <div class="stamp p-4" id="card-fruit">
+    <!-- CARD 2 -->
+    <div class="stamp p-4 rounded-xl border border-[#E8A48A]/60 shadow-lg shadow-[#E8A48A]/40 bg-gradient-to-br from-[#FFE8E2] to-[#F9C8B8]" id="card-fruit">
       <div class="perforation"></div>
       <div class="perforation right"></div>
 
@@ -465,8 +558,8 @@
       </div>
     </div>
 
-    <!-- CARD 3: Dark Academiya -->
-    <div class="stamp p-4" id="card-pastel">
+    <!-- CARD 3 -->
+    <div class="stamp p-4 rounded-xl border border-[#6A4A7A]/60 shadow-lg shadow-[#6A4A7A]/40 bg-gradient-to-br from-[#F1E9FF] to-[#D9CCF0]" id="card-pastel">
       <div class="perforation"></div>
       <div class="perforation right"></div>
 
@@ -487,7 +580,7 @@
             <div class="text-sm text-muted">Classic</div>
           </div>
 
-          <p class="mt-2 text-sm text-muted">Brown, black - dark color pallete for the beads, custom how you want.</p>
+          <p class="mt-2 text-sm text-muted">Brown, black - dark color palette for the beads, custom how you want.</p>
 
           <div class="mt-4 flex flex-col sm:flex-row gap-2">
             <button class="btn-vintage look-btn"
@@ -506,7 +599,6 @@
 
   </div>
 </section>
-
 
 <section id="acrylic-designs" class="mt-12">
   <h2 class="text-xl md:text-2xl font-semibold mb-6">Acrylic Designs — Charm Style</h2>
@@ -1049,4 +1141,3 @@
 
 </body>
 </html>
-
